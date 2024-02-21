@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link rel="stylesheet" type="text/css" href="todo.css">
+
+</head>
+<body>
+
+<h1>Tasks</h1>
+
+<form>
+    <input id="new-task" placeholder="New Task" type="text">
+    <button type="submit" disabled>Add Task</button>
+</form>
+
+<ul id="tasks"></ul>
+
+<script>
+ // Get elements
+const form = document.querySelector('form');
+const newTask = document.getElementById('new-task');
+const tasks = document.getElementById('tasks');
+const submit = document.querySelector('button[type="submit"]');
+
+// Disable button
+submit.disabled = true;
+
+// Input listener
+newTask.addEventListener('input', () => {
+  submit.disabled = newTask.value.length == 0;
+});
+
+// Submit listener
+form.addEventListener('submit', e => {
+
+  // Prevent default
+  e.preventDefault();
+
+  // Get value
+  const task = newTask.value;
+
+  // Create li
+  const li = document.createElement('li');
+  li.textContent = task;
+
+  // Append li to DOM
+  tasks.appendChild(li);
+
+  // Clear input
+  newTask.value = '';
+
+  // Disable button
+  submit.disabled = true;
+
+  return false;
+});
+  </script>
+
+</body>
+</html>

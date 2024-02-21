@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background: maroon;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  background: navy;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: 1px solid #3e8e41;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+#tasks {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#tasks li {
+  list-style: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#tasks li:last-child {
+  border-bottom: none;
+}
